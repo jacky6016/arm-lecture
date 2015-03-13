@@ -39,10 +39,10 @@ LOOP:
 	mov   r5, r7
 	
 	subs  r3, r3, #1 
-	ite   lt
+	ite   ge
+	bge   LOOP 
 	movlt r0, r6
-	bge   LOOP
-	b     END	
+	blt   END	
 
 BASECASE:
 	cmp   r0, #1
